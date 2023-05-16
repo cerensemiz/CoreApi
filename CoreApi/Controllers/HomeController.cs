@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.InterfacesOfManagers;
 using EntityLayer.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Abstractions;
 
@@ -17,7 +18,8 @@ namespace CoreApi.Controllers
         }
 
         [HttpGet]
-        [Route("allstudents")]
+        [Route("alls")]
+        [Authorize]
         public IActionResult AllStudents()
         {
             try
